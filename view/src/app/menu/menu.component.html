@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="table-responsive col-md-6">
+    <div class="container">
+      <h2><u>Hotal Menu</u></h2>
+      <table class="table table-hover">
+        <thead>
+          <th>Item-Id</th>
+          <th>Item-Name</th>
+          <th>Item-Cost</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let food of fooditem">
+            <td>{{ food.item_id }}</td>
+            <td>{{ food.item_name }}</td>
+            <td>{{ food.item_cost }}</td>
+            <td>
+              <button class="btn btn-secondary" (click)="passid(this.food.item_id, this.food.item_name, this.food)">
+                Add
+              </button>
+            </td>
+          </tr>
+          <div></div>
+        </tbody>
+      </table>
+    </div>
+    <app-bill [foss]="fos" [c]="count"></app-bill>
+  </div>
+</div>
